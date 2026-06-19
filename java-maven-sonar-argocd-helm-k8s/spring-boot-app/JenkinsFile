@@ -12,6 +12,11 @@ pipeline {
         //git branch: 'main', url: 'https://github.com/Sindhuja-Karry/jenkins-cicd-pipeline.git'
       }
     }
+    stage('Clean') {
+    steps {
+        sh 'sudo rm -rf java-maven-sonar-argocd-helm-k8s/spring-boot-app/target || true'
+     }
+   }
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
